@@ -76,7 +76,8 @@ func randomAuthor()->(String, String) {
     dictAuthors[forthAuth.name] = forthAuth
     dictAuthors[fiftAuth.name] = fiftAuth
     
-    var selectedAuth = 
+    var selectedAuth = dictAuthors.values.array[Int(arc4random_uniform(UInt32(dictAuthors.count)))]
+    return (selectedAuth.name, selectedAuth.email)
 }
 
 
