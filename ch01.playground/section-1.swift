@@ -7,7 +7,7 @@ R1 – Create a constant array of String literals called “types” with the
 values: technology, memes, cat videos
 **/
 // implement code for R1 below
-
+let types = ["technology", "memes", "cat videos"]
 
 
 /**
