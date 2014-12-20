@@ -26,6 +26,26 @@ method that returns a String with the author’s name and number of views:
 return “No one has read your blog post yet. Pity.”.
 **/
 // implement code for R2 below
+class BlogPost {
+    let type = types[Int(arc4random_uniform(UInt32(types.count)))]
+    var views:Int? = nil
+    var author = String()
+    var email = String()
+    var order:Int? = nil
+    
+    init(iName:String, iEmail:String) {
+        self.author = iName
+        self.email = iEmail
+    }
+    
+    func teaser()->String {
+        if (views == 0) {
+            return "No one has read your blog post yet. Pity."
+        } else {
+            return "Mike Smith has \(views) views for this blog post"
+        }
+    }
+}
 
 
 
