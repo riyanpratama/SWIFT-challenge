@@ -28,10 +28,10 @@ return “No one has read your blog post yet. Pity.”.
 // implement code for R2 below
 class BlogPost {
     let type = types[Int(arc4random_uniform(UInt32(types.count)))]
-    var views:Int? = nil
-    var author = String()
-    var email = String()
-    var order:Int? = nil
+    var views: Int? = nil
+    var author: String
+    var email: String
+    var order: Int? = nil
     
     init(iName:String, iEmail:String) {
         self.author = iName
@@ -56,7 +56,28 @@ to a dictionary using the author’s name as the key. This function returns
 a randomly selected name and email of an Author from the dictionary.
 **/
 // implement code for R3 below
-
+func randomAuthor()->(String, String) {
+    struct Author {
+        var name: String
+        var email: String
+    }
+    
+    var firstAuth = Author(name: "Orang Pertama", email: "satu@gmail.com")
+    var secondAuth = Author(name: "Orang Kedua", email: "dua@gmail.com")
+    var thirdAuth = Author(name: "Orang Ketiga", email: "tiga@gmail.com")
+    var forthAuth = Author(name: "Orang Keempat", email: "empat@gmail.com")
+    var fiftAuth = Author(name: "Orang Kelima", email: "lima@gmail.com")
+    
+    // add to dict
+    var dictAuthors = Dictionary<String, Author>()
+    dictAuthors[firstAuth.name] = firstAuth
+    dictAuthors[secondAuth.name] = secondAuth
+    dictAuthors[thirdAuth.name] = thirdAuth
+    dictAuthors[forthAuth.name] = forthAuth
+    dictAuthors[fiftAuth.name] = fiftAuth
+    
+    var selectedAuth = 
+}
 
 
 /**
