@@ -27,17 +27,20 @@ return “No one has read your blog post yet. Pity.”.
 **/
 // implement code for R2 below
 class BlogPost {
+    // properties
     let type = types[Int(arc4random_uniform(UInt32(types.count)))]
     var views: Int? = nil
     var author: String
     var email: String
     var order: Int? = nil
     
+    // initalizer
     init(iName:String, iEmail:String) {
         self.author = iName
         self.email = iEmail
     }
     
+    // method that return string
     func teaser()->String {
         if (views == 0) {
             return "No one has read your blog post yet. Pity."
@@ -57,24 +60,29 @@ a randomly selected name and email of an Author from the dictionary.
 **/
 // implement code for R3 below
 func randomAuthor()->(String, String) {
+    // struct author
     struct Author {
         var name: String
         var email: String
     }
     
+    // create author with struct construction
     var firstAuth = Author(name: "Orang Pertama", email: "satu@gmail.com")
     var secondAuth = Author(name: "Orang Kedua", email: "dua@gmail.com")
     var thirdAuth = Author(name: "Orang Ketiga", email: "tiga@gmail.com")
     var forthAuth = Author(name: "Orang Keempat", email: "empat@gmail.com")
     var fiftAuth = Author(name: "Orang Kelima", email: "lima@gmail.com")
     
-    // add to dict
+    // create dictionary for storing author
     var dictAuthors = Dictionary<String, Author>()
+    
+    // create elements of dictionary
     dictAuthors[firstAuth.name] = firstAuth
     dictAuthors[secondAuth.name] = secondAuth
     dictAuthors[thirdAuth.name] = thirdAuth
     dictAuthors[forthAuth.name] = forthAuth
     dictAuthors[fiftAuth.name] = fiftAuth
+    
     
     var selectedAuth = dictAuthors.values.array[Int(arc4random_uniform(UInt32(dictAuthors.count)))]
     return (selectedAuth.name, selectedAuth.email)
@@ -88,6 +96,21 @@ the “order” property to the value of the index of the for loop used to
 populate this array.
 **/
 // implement code for R4 below
+
+var arrBlogPost = Array<BlogPost>()
+
+for i in 0...9 {
+    
+    // fetch from randomAuthor() func and give to item
+    let randValue = randomAuthor()
+    var itemBlogPost = BlogPost(iName: randValue.0, iEmail: randValue.1)
+    
+    // order as loop index
+    itemBlogPost.order = i
+    
+    // add to array blogPost
+    arrBlogPost.append(itemBlogPost)
+}
 
 
 
