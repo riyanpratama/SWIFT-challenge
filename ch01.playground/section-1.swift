@@ -124,6 +124,26 @@ selected number of views. If the “type” passed to the function is
 “cat videos” always return nil.
 **/
 // implement code for R5 below
+func randomViews(type: String)->(Int?) {
+    
+    let ints = [10, 20, 30, 40, 50]
+    
+    //  get random value from ints
+    var randInts = ints[Int(arc4random_uniform(UInt32(ints.count)))]
+    
+    switch(randInts){
+    case 10:
+        return nil;
+    case 20, 30:
+        return 0;
+    default:
+        return randInts;
+    }
+    
+    if (type=="cat videos"){
+        return nil
+    }
+}
 
 
 
