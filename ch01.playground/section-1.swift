@@ -131,6 +131,11 @@ func randomViews(type: String)->(Int?) {
     //  get random value from ints
     var randInts = ints[Int(arc4random_uniform(UInt32(ints.count)))]
     
+    // won't work if this placed in bottom
+    if (type=="cat videos"){
+        return nil
+    }
+    
     switch(randInts){
     case 10:
         return nil;
@@ -139,10 +144,7 @@ func randomViews(type: String)->(Int?) {
     default:
         return randInts;
     }
-    
-    if (type=="cat videos"){
-        return nil
-    }
+
 }
 
 
@@ -153,7 +155,10 @@ for each one and set it to the blog post “views” property. Then println the
 value of each post.teaser().
 **/
 // implement code for R6 below
-
+for post in arrBlogPost {
+    post.views = randomViews(post.type)
+    println(post.teaser())
+}
 
 
 /**
@@ -165,3 +170,4 @@ the stack. Use a for loop to iterate the “blogs” stack, pop the top one
 off and println the blog’s teaser. Println the count of items in the stack.
 **/
 // implement code for R7 below
+struct 
